@@ -13,5 +13,6 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('generos', GeneroController::class);
+    $router->resource('filmes', FilmeController::class);
 
 });
