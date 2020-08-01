@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController');
 Route::get('filme/{id}', 'FilmeController');
+Route::get('genero/{id}', 'GeneroController');
