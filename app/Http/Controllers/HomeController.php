@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Filme;
 use App\Genero;
+use Illuminate\Http\Request;
 
 
 class HomeController extends Controller
@@ -16,6 +17,9 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        return view('home', ['generos' => Genero::all()]);
+
+        $filmes = Filme::all();
+        $generos = Genero::with('filmes')->get();
+        return view('home', ['filmes' => $filmes, 'generos' => $generos]);
     }
 }
